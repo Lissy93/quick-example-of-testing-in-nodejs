@@ -1,0 +1,25 @@
+{
+  "name": "quick-test-example",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha",
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha --dir ./reports/coverage"
+  },
+  "author": "Alicia <alicia@aliciasykes.com> (http://aliciasykes.com)",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "coffee-script": "^1.9.3",
+    "istanbul": "^0.3.18",
+    "mocha": "^2.2.5",
+    "mochawesome": "^1.2.1",
+    "mockery": "^1.4.0",
+    "sinon": "^1.16.1"
+  },
+  "dependencies": {
+    "colors": "^1.1.2",
+    "request": "^2.61.0"
+  }
+}
