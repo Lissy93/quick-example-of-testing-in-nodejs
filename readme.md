@@ -1,4 +1,4 @@
-## Intoro
+## Intro
 This is a quick example project to show how a test environment can be setup in Node.js
 
 It includes the following
@@ -21,5 +21,5 @@ you will need for the current weather.
 
 ## To run the project
 - ```npm start``` will run the main file (app.js) and display results
-- ```npm test``` will run the Mocha tests, output results and generate reports
+- ```node app --location Newcastle``` will run app.js for a custom location, e.g. Newcastle- ```npm test``` will run the Mocha tests, output results and generate reports
 - ```npm run cover``` will run the Istanbul coverage tests and output results and generate reports
