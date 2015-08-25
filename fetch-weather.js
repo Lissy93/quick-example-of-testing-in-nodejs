@@ -33,6 +33,7 @@ function kelvinToCelcius(kTemp){
 }
 
 function getRainFall(rainObj){
+    if (!rainObj) return 0;
     return (rainObj['1h'] || rainObj['2h'] || rainObj['3h'] || 0);
 }
 
