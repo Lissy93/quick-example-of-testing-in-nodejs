@@ -24,6 +24,8 @@ you will need for the current weather.
 - ```node app --location Newcastle``` will run app.js for a custom location, e.g. Newcastle
 - ```npm test``` will run the Mocha tests, output results and generate reports
 - ```npm run cover``` will run the Istanbul coverage tests and output results and generate reports
-- 
 
+
+
+## Screenshot
 ![Preview](http://s29.postimg.org/yggrrf5wn/Untitled.png)
