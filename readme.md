@@ -3,10 +3,18 @@ This is a quick example project to show how a test environment can be setup in N
 
 It includes the following
 
-- [Mocha](http://mochajs.org/) - testing framework
-- [Chai](http://chaijs.com/) - assertion library
-- [Istanbul](https://github.com/gotwarlost/istanbul) - coverage testing
-- [SinonJs](http://sinonjs.org/) - stubs and splices for mocking data
+- [Mocha](http://mochajs.org/) - *testing framework*
+- [Chai](http://chaijs.com/) - *assertion library*
+- [Istanbul](https://github.com/gotwarlost/istanbul) - *coverage testing
+- [SinonJs](http://sinonjs.org/) - *stubs and splices for mocking data*
+
+
+The following online tools are used to monitor results
+
+- [Travis CI](https://travis-ci.org/) - *Continuous Integration*
+- [David DM](https://david-dm.org/) - *Dependency Management*
+- [Codacy](https://www.codacy.com/) - *Automated Code Quality Reviews*
+
 
 ## The Project
 The project is a very simple script that pulls current weather data from OpenWeatherMap
@@ -24,8 +32,6 @@ you will need for the current weather.
 - ```node app --location Newcastle``` will run app.js for a custom location, e.g. Newcastle
 - ```npm test``` will run the Mocha tests, output results and generate reports
 - ```npm run cover``` will run the Istanbul coverage tests and output results and generate reports
-
-
 
 ## Screenshot
 ![Preview](http://s29.postimg.org/yggrrf5wn/Untitled.png)
