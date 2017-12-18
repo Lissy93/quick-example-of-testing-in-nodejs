@@ -13,7 +13,7 @@ It includes the following
 
 - [Mocha](http://mochajs.org/) - *testing framework*
 - [Chai](http://chaijs.com/) - *assertion library*
-- [Istanbul](https://github.com/gotwarlost/istanbul) - *coverage testing
+- [Istanbul](https://github.com/gotwarlost/istanbul) - *coverage testing*
 - [SinonJs](http://sinonjs.org/) - *stubs and splices for mocking data*
 
 
