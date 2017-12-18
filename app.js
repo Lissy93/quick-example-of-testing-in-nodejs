@@ -1,7 +1,7 @@
 /**
  * Created by alicia.sykes on 24/08/2015.
  */
-var colors = require('colors');
+require('colors');
 
 var fetchWeather = require('./fetch-weather');
 var prepareForWeather = require('./prepared-for-the-weather');

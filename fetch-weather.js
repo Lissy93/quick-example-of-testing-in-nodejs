@@ -6,7 +6,8 @@ var request = require('request');
 
 function fetchWeather(location, callback) {
 
-    var url = 'http://api.openweathermap.org/data/2.5/weather?q='+location;
+    var appId = 'aa0f1b0be45dca476178787f941c76dc'; // This is a managed key - I don't mind if you steal it ;)
+    var url = 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&appid='+appId;
 
     request({
         url: url,
