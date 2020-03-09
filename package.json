@@ -12,8 +12,7 @@
     "coverageReporters": [
       "text",
       "cobertura"
-    ],
-     "testPathDirs": ["./test/"]
+    ]
   },
   "author": "Alicia <alicia@aliciasykes.com> (http://aliciasykes.com)",
   "license": "ISC",
