@@ -1,4 +1,0 @@
---compilers coffee:coffee-script/register
---reporter mochawesome
---reporter-options reportDir=./reports/awesome-reports
---recursive
