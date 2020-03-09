@@ -28,8 +28,5 @@
     "isparta": "^4.1.1",
     "istanbul": "^0.4.5",
     "nyc": "^11.9.0"
-  },
-  "dependencies": {
-    "mocha-cobertura-reporter": "^1.0.4"
   }
 }
