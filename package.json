@@ -2,19 +2,18 @@
   "name": "quick-test-example",
   "version": "1.0.0",
   "main": "app.js",
-  "jest": {
-    "verbose": true
-  },
   "scripts": {
     "start": "node app.js",
     "test": "babel-node ./node_modules/.bin/isparta cover _mocha",
     "coverage": "jest --coverage --coverageDirectory=output/coverage/jest"
   },
     "jest": {
+    "verbose": true,
     "coverageReporters": [
       "text",
       "cobertura"
-    ]
+    ],
+     "testPathDirs": ["./test/"]
   },
   "author": "Alicia <alicia@aliciasykes.com> (http://aliciasykes.com)",
   "license": "ISC",
