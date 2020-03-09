@@ -8,7 +8,7 @@
   "scripts": {
     "start": "node app.js",
     "test": "babel-node ./node_modules/.bin/isparta cover _mocha",
-    "coverage": "jest --findRelatedTests test/*.js --coverage --coverageDirectory=output/coverage/jest"
+    "coverage": "jest --coverage --coverageDirectory=output/coverage/jest"
   },
     "jest": {
     "coverageReporters": [
