@@ -23,7 +23,7 @@
   "dependencies": {
     "colors": "^1.1.2",
     "command-line-args": "^4.0.7",
-    "mocha-cobertura-reporter": "^1.0.4"
+    "mocha-cobertura-reporter": "^1.0.4",
     "request": "^2.83.0"
   }
 }
