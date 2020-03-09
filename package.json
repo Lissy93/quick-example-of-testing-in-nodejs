@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node app.js",
     "test": "babel-node ./node_modules/.bin/isparta cover _mocha",
-    "coverage": "jest --coverage --coverageDirectory=output/coverage/jest"
+    "coverage": "jest --coverage --coverageDirectory=output/coverage/jest --testPathPattern='./test/*'"    
   },
     "jest": {
     "verbose": true,
