@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node app.js",
     "test": "mocha",
-    "coverage": "jest --coverage --coverageDirectory=output/coverage/jest"
+    "coverage": "jest --coverage --coverageDirectory=output/coverage/jest",
     "cover": "istanbul cover node_modules/mocha/bin/_mocha --dir ./reports/coverage"
   },
   "author": "Alicia <alicia@aliciasykes.com> (http://aliciasykes.com)",
