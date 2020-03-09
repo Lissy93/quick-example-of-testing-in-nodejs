@@ -30,8 +30,6 @@
     "nyc": "^11.9.0"
   },
   "dependencies": {
-    "colors": "^1.1.2",
-    "command-line-args": "^4.0.7",
     "mocha-cobertura-reporter": "^1.0.4"
   }
 }
