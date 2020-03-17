@@ -6,6 +6,7 @@
 [![Code Quality Grade](https://api.codacy.com/project/badge/Grade/6b793dc0759b4b22a73f4d7eae0d6983)](https://www.codacy.com/app/lissy93/quick-example-of-testing-in-nodejs?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Lissy93/quick-example-of-testing-in-nodejs&amp;utm_campaign=Badge_Grade)
 [![Dependency Status](https://david-dm.org/lissy93/quick-example-of-testing-in-nodejs.svg)](https://david-dm.org/lissy93/quick-example-of-testing-in-nodejs)
 [![devDependency Status](https://david-dm.org/lissy93/quick-example-of-testing-in-nodejs/dev-status.svg)](https://david-dm.org/lissy93/quick-example-of-testing-in-nodejs#info=devDependencies)
+[![Inline docs](http://inch-ci.org/github/Lissy93/quick-example-of-testing-in-nodejs.svg?branch=master)](http://inch-ci.org/github/Lissy93/quick-example-of-testing-in-nodejs)
 
 
 ## Intro
@@ -24,6 +25,7 @@ The following online tools are used to monitor results
 - [Travis CI](https://travis-ci.org/) - *Continuous Integration*
 - [David DM](https://david-dm.org/) - *Dependency Management*
 - [Codacy](https://www.codacy.com/) - *Automated Code Quality Reviews*
+- [Inch CI](https://inch-ci.org/) - *Documentation Reviews*
 
 
 ## The Project

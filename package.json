@@ -2,6 +2,9 @@
   "name": "quick-test-example",
   "version": "1.0.0",
   "main": "app.js",
+  "jest": {
+    "verbose": true
+  },
   "scripts": {
     "start": "node app.js",
     "test": "babel-node ./node_modules/.bin/isparta cover _mocha",
@@ -9,6 +12,9 @@
   },
     "jest": {
     "verbose": true,
+    "coverage": "istanbul report cobertura --dir output/coverage/jest"
+  },
+    "jest": {
     "coverageReporters": [
       "text",
       "cobertura"
@@ -30,3 +36,4 @@
     "nyc": "^11.9.0"
   }
 }
+
