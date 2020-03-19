@@ -22,6 +22,11 @@
     ]
   },
   "standard": {
+    "ignore": [
+    "/app.js",
+    "/test/preparing-data.test.js",
+    "/test/weather-kit.test.js"
+  ],
     "parser": "babel-eslint"
 },
   "author": "Alicia <alicia@aliciasykes.com> (http://aliciasykes.com)",
