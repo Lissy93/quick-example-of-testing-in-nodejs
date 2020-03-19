@@ -23,7 +23,6 @@
   },
   "standard": {
     "ignore": [
-    "/app.js",
     "/test/preparing-data.test.js",
     "/test/weather-kit.test.js"
   ],
