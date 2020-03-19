@@ -10,7 +10,6 @@
     "test": "babel-node ./node_modules/.bin/isparta cover _mocha",
     "coverage": "istanbul report cobertura --dir output/coverage/jest",
     "standard": "standard --verbose --fix | snazzy",
-    "lint": "eslint **/*.js -c config.eslintrc -f checkstyle"
   },
     "jest": {
     "verbose": true,
@@ -40,7 +39,6 @@
     "isparta": "^4.1.1",
     "istanbul": "^0.4.5",
     "standard": "*",
-    "eslint": "*",
     "nyc": "^11.9.0"
   },
   "dependencies": {
