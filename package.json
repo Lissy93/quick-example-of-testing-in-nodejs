@@ -9,7 +9,7 @@
     "start": "node app.js",
     "test": "babel-node ./node_modules/.bin/isparta cover _mocha",
     "coverage": "istanbul report cobertura --dir output/coverage/jest",
-    "standard": "standard"
+    "standard": "standard --verbose | snazzy"
   },
     "jest": {
     "verbose": true,
