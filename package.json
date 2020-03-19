@@ -40,6 +40,9 @@
     "istanbul": "^0.4.5",
     "standard":"*",
     "nyc": "^11.9.0"
+  },
+  "dependencies": {
+    "snazzy": "^8.0.0"
   }
 }
 
