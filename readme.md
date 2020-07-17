@@ -43,5 +43,15 @@ you will need for the current weather.
 - ```npm test``` will run the Mocha tests, output results and generate reports
 - ```npm run cover``` will run the Istanbul coverage tests and output results and generate reports
 
-## Screenshot
-![Preview](http://s29.postimg.org/yggrrf5wn/Untitled.png)
+## Screenshots
+
+Command Line Output: Tests Passing
+
+<p align="center"><img src="https://i.ibb.co/WDpBStz/better-test3.png" /></p>
+
+Web Report: Some Tests Failing
+<p align="center"><img src="https://i.ibb.co/93CdGjG/bad-test1.png" /></p>
+
+Web Report: All Tests Passing
+<p align="center"><img src="https://i.ibb.co/nCdHFs4/better-test2.png" /></p>
+
