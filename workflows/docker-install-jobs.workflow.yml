@@ -1,5 +1,5 @@
 name: 'install Docker Workflow'
-on: 
+on:    
   pull_request:
   types: [closed]
 env:
