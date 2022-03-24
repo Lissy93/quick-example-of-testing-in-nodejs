@@ -17,3 +17,4 @@ jobs:
       - name: Else IF not Windows
         if: runner.os != 'Windows'
         run: echo "L'OS présent sur le runner est ${{runner.os}}, wont run ! "
+ 
