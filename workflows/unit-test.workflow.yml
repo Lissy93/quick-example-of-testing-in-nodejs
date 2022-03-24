@@ -1,0 +1,19 @@
+name: Réalisation des tests unitaires
+
+on: 
+  pull_request:
+    types: [closed, opened]
+    branches: 
+      - main # branche destination PR
+jobs:
+  JobDeTests-3-on-pr:
+    runs-on: macos-latest
+    steps:
+      - name: show runner
+        run: echo "runner => ${{toJSON(runner)}}"
+      - name: IF Windows
+        if: runner.os == 'Windows'
+        run: echo "L'OS présent sur le runner est ${{runner.os}}, will run !"
+      - name: Else IF not Windows
+        if: runner.os != 'Windows'
+        run: echo "L'OS présent sur le runner est ${{runner.os}}, wont run ! "
