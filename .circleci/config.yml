@@ -1,0 +1,49 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@5.0.2
+
+executors:
+  node14:
+    docker:
+      - image: 'cimg/node:14.18.2'
+    resouce_classs: medium
+
+commands:
+  nodesetup:
+    description: checkout, restore cache, save cache, install dependencies
+    steps:
+      - checkout
+      - node/install-packages:
+         cache-path: ~/project/node_modules
+         app-dir: ~/project/
+
+jobs:
+  build_and_test:
+    executor: 'node14'
+    steps:
+      - nodesetup
+      - run:
+          name: Test
+          command: |
+            npm run coverage
+      - restore_cache:
+          keys:
+          - v1-result-cache
+      - run:
+          name: Coverage Test
+          command: |
+            mv /tmp/result /tmp/result-moved || true
+            npx lcov-total coverage/lcov.info > /tmp/result
+            chmod u+x coveragetest.sh
+            ./coveragetest.sh
+      - save_cache:
+          paths: coverage
+          key: v1-result-cache
+      - store_artifacts: # Save coverage reports as artifacts 
+          path: coverage
+          prefix: coverage
+
+workflows:
+  jobs:
+    - build_and_test
