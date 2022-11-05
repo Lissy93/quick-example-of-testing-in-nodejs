@@ -7,7 +7,7 @@ executors:
   node14:
     docker:
       - image: 'cimg/node:14.18.2'
-    resouce_classs: medium
+    resource_class: medium
 
 commands:
   nodesetup:
@@ -45,5 +45,6 @@ jobs:
           prefix: coverage
 
 workflows:
-  jobs:
-    - build_and_test
+  node_build_pipeline:
+    jobs:
+      - build_and_test
