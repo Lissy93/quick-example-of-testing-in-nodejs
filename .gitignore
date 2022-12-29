@@ -3,3 +3,4 @@ reports
 .idea
 *.logs
 yarn.lock
+.idea
