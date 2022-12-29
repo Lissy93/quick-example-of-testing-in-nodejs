@@ -9,9 +9,9 @@ jobs:
         name: Start Pipeline
         command: |
           echo 'Starting pipeline'
-    - run:
-        name: Install dependencies
-        command: npm install
+#    - run:
+#        name: Install dependencies
+#        command: npm install
 
     - run:
         name: Run Tests
