@@ -22,7 +22,7 @@ jobs:
         command: npm run test
 
     - run:
-        name: Generate code coverage
+        name: Generate code coverage report
         command: npm run cover
 
     - codecov/upload
