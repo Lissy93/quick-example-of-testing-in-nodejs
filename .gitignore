@@ -4,3 +4,4 @@ reports
 *.logs
 yarn.lock
 .idea
+build

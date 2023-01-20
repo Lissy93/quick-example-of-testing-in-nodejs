@@ -1,8 +1,8 @@
-name: PR Validator
+name: Bundle and Release
 
 on:
   push:
-    branches-ignore:
+    branches:
       - master
 
 jobs:
@@ -14,5 +14,4 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: '14'
-    - run: npm install
-    - run: npm test
+    - run: echo Triggered on main branch merge
