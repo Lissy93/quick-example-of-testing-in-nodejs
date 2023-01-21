@@ -18,4 +18,6 @@ jobs:
     - run: npm run build
 
     - run: gh release create v1.0.1 -d
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
