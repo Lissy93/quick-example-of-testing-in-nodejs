@@ -14,4 +14,4 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: '14'
-    - run: echo Triggered on main branch merge
+    - run: npm run build
