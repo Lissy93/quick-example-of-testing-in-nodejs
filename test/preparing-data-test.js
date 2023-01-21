@@ -15,7 +15,7 @@ var rawWeatherData = require('../test-data/sample-weather-raw.json');
 
 describe('Test that the data fetched from OpenWeatherMap is processed correctly', function(){
 
-    it('Should check fetched data is processed correctly', function(){
+    it('Should check fetched data is correctly processed', function(){
         var callback = sinon.stub();
         callback.withArgs("London").returns(rawWeatherData);
         //TODO
