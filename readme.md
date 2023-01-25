@@ -1,7 +1,7 @@
 
 <h1 align="center">🛠️ Unit Testing in Node.JS</h1>
 <p align="center">
-  <i>A quick example of testing in Node.JS</i>
+  <i>A quick example of testing Node.JS app</i>
 </p>
 
 <br>
