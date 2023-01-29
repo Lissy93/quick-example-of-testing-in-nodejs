@@ -21,7 +21,7 @@ jobs:
 
     - name: Find package version
       id: packageVersion
-      run: echo "package_json=$(cat package.json | tr -d "\n") >> $GITHUB_OUTPUT
+      run: echo "package_json=$(cat package.json | tr -d "\n")" >> $GITHUB_OUTPUT
 
     - name: Print version
       run: echo "Package Json is ${{steps.packageVersion.outputs.package_json}}"
