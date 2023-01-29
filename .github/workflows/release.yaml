@@ -24,7 +24,7 @@ jobs:
       run: |
         packageJson=`cat package.json`
         echo "Package Json is $packageJson"
-        packageJson="${packageJson//'%'/'%25'}"
+        #packageJson="${packageJson//'%'/'%25'}"
         packageJson="${packageJson//$'\n'/'%0A'}"
         packageJson="${packageJson//$'\r'/'%0D'}"
         # end of optional handling for multi line json
