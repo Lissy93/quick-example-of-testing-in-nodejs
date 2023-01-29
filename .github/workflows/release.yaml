@@ -24,7 +24,7 @@ jobs:
       run: |
         packageJson=`cat package.json`
         echo "Package Json is $packageJson"
-        packageJson = $(echo $packageJson | tr -d "%0A" )
+        packageJson=$(cat package.json | tr -d "%0A, \n")
         echo "After removing char is $packageJson"
 
         #packageJson="${packageJson//'%'/'%25'}"
