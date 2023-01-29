@@ -24,8 +24,8 @@ jobs:
       run: |
         packageJson=`cat package.json`
         packageJson="${packageJson//'%'/'%25'}"
-        # packageJson="${packageJson//$'\n'/'%0A'}"
-        # packageJson="${packageJson//$'\r'/'%0D'}"
+        packageJson="${packageJson//$'\n'/'%0A'}"
+        packageJson="${packageJson//$'\r'/'%0D'}"
         # end of optional handling for multi line json
         echo "package_json=$packageJson" >> $GITHUB_OUTPUT
 
