@@ -26,7 +26,7 @@ jobs:
         cmd: 'jq .version package.json -r'
 
     - name: Create Release
-      run: gh release create -d ${{ steps.packageVersion.outputs.value }} ./dist/*.js
+      run: gh release create -d "v${{ steps.packageVersion.outputs.value }}" ./dist/*.js
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
