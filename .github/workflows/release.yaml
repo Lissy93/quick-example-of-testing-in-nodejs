@@ -15,9 +15,18 @@ jobs:
       with:
         node-version: '14'
     - run: npm install
-    - run: npm run build
 
-    - run: gh release create -d ./dist/*.js
+    - name: Create bundle
+      run: npm run build
+
+    - name: Find package version
+      id: packageVersion
+      uses: sergeysova/jq-action@v2
+      with:
+        cmd: 'jq .version package.json -r'
+
+    - name: Create Release
+      run: gh release create -d ${{ steps.packageVersion.outputs.value }} ./dist/*.js
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
