@@ -21,12 +21,16 @@ jobs:
 
     - name: Find package version
       id: packageVersion
-      uses: sergeysova/jq-action@v2
-      with:
-        cmd: 'jq .version package.json -r'
+      run: |
+        packageJson=`cat package.json`
+        packageJson="${packageJson//'%'/'%25'}"
+        packageJson="${packageJson//$'\n'/'%0A'}"
+        packageJson="${packageJson//$'\r'/'%0D'}"
+        # end of optional handling for multi line json
+        echo "package_json=packageJson" >> $GITHUB_OUTPUT
 
     - name: Create Release
-      run: gh release create -d "v${{ steps.packageVersion.outputs.value }}" ./dist/*.js
+      run: gh release create -d "v${{ fromJson(steps.packageVersion.outputs.package_json).version }}" ./dist/*.js
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
