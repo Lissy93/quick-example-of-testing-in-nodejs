@@ -27,7 +27,7 @@ jobs:
         packageJson="${packageJson//$'\n'/'%0A'}"
         packageJson="${packageJson//$'\r'/'%0D'}"
         # end of optional handling for multi line json
-        echo "package_json=packageJson" >> $GITHUB_OUTPUT
+        echo "package_json=$packageJson" >> $GITHUB_OUTPUT
 
     - name: Print version
       run: echo "Package Json is ${{steps.packageVersion.outputs.package_json}}"
