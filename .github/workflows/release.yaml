@@ -21,17 +21,7 @@ jobs:
 
     - name: Find package version
       id: packageVersion
-      run: |
-        packageJson=`cat package.json`
-        echo "Package Json is $packageJson"
-        packageJson=$(cat package.json | tr -d "\n")
-        echo "After removing char is $packageJson"
-
-        #packageJson="${packageJson//'%'/'%25'}"
-        #packageJson="${packageJson//$'\n'/'%0A'}"
-        #packageJson="${packageJson//$'\r'/'%0D'}"
-        # end of optional handling for multi line json
-        echo "package_json=$packageJson" >> $GITHUB_OUTPUT
+      run: echo "package_json=$(cat package.json | tr -d "\n") >> $GITHUB_OUTPUT
 
     - name: Print version
       run: echo "Package Json is ${{steps.packageVersion.outputs.package_json}}"
