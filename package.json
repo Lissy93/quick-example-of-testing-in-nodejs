@@ -8,7 +8,7 @@
     "test": "mocha",
     "cover": "istanbul cover node_modules/mocha/bin/_mocha --dir ./reports/coverage"
   },
-  "author": "Alicia <alicia@aliciasykes.com> (http://aliciasykes.com)",
+  "author": "vdadwal@git.com",
   "license": "ISC",
   "devDependencies": {
     "chai": "^4.1.2",
