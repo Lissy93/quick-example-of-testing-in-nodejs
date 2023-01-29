@@ -29,6 +29,9 @@ jobs:
         # end of optional handling for multi line json
         echo "package_json=packageJson" >> $GITHUB_OUTPUT
 
+    - name: Print version
+      run: echo "Package Json is ${{steps.packageVersion.outputs.package_json}}"
+
     - name: Create Release
       run: gh release create -d "v${{ fromJson(steps.packageVersion.outputs.package_json).version }}" ./dist/*.js
       env:
