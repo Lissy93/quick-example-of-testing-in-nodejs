@@ -27,7 +27,7 @@ jobs:
       run: echo "Package Json is ${{steps.packageVersion.outputs.package_json}}"
 
     - name: Create Release
-      run: gh release create -d "v${{ fromJson(steps.packageVersion.outputs.package_json).version }}" ./dist/*.js
+      run: gh release create -d "v${{ fromJson(steps.packageVersion.outputs.package_json).version }}" -t Automated Release -F ./changeLog/v1/md ./dist/*.js
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
