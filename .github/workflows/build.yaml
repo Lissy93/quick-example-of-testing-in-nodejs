@@ -10,8 +10,24 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+      with:
+        ref: ${{github.head_ref}}
     - uses: actions/setup-node@v3
       with:
         node-version: '14'
     - run: npm install
     - run: npm test
+
+    - name: Create bundle
+      run: npm run build
+
+    - name: Copy bundle to assets and commit
+      run: |
+        mkdir -p ./assets
+        cp ./dist/*.js ./assets/
+        git branch
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git add .
+        git commit -m "generated"
+        git push
