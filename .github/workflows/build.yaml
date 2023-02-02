@@ -32,3 +32,11 @@ jobs:
     - name: Create bundle
       run: npm run build
 
+    - name: Copy bundle to assets and commit
+      run: |
+        git config user.name ABCD
+        git config user.email ABCD@github.com
+        git add assets
+        git commit -m "Updating assets"
+        git push
+
