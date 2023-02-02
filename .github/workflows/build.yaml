@@ -1,9 +1,11 @@
 name: PR Validator
 
 on:
-  pull_request:
-    types: [opened, reopened, synchronize]
-
+  #pull_request:
+  #  types: [opened, reopened, synchronize]
+  push:
+    branches-ignore:
+      - main
 jobs:
   build:
     if: github.actor == 'VilakshanDadwal'
@@ -34,4 +36,4 @@ jobs:
         git config user.email github-actions@github.com
         git add assets
         git commit -m "Updating assets"
-     #   git push
+        git push
