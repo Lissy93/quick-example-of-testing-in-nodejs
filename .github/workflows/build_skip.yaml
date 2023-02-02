@@ -1,4 +1,4 @@
-name: PR Validator
+name: Asset Updated
 
 on:
   push:
@@ -10,5 +10,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - run: echo "No unit test check needed"
+      - run: echo "No unit test check needed for uploading assets"
 
