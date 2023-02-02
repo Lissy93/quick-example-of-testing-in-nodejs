@@ -1,0 +1,14 @@
+name: Asset Updated
+
+on:
+  push:
+    paths:
+      - 'assets/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - run: echo "No unit test check needed for uploading assets"
+
