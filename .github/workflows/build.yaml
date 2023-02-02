@@ -3,7 +3,6 @@ name: PR Validator
 on:
   pull_request:
     types: [opened, reopened, synchronize]
-    branches : main
 
 jobs:
   build:
