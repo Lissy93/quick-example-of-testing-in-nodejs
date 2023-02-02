@@ -2,7 +2,6 @@ name: PR Validator
 
 on:
   pull_request:
-    types: [opened, reopened, synchronize]
     paths-ignore:
       - 'assets/*'
 
@@ -28,8 +27,5 @@ jobs:
         git config user.name ABCD
         git config user.email ABCD@github.com
         git add assets
-        git commit -m "Updating assets
-
-
-        skip-checks:true"
+        git commit -m "Updating assets"
         git push
