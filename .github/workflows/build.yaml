@@ -40,5 +40,5 @@ jobs:
         git commit -m "Updating assets
 
 
-        skip-checks: true"
+        skip-checks:true"
         git push
