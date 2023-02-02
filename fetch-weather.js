@@ -23,7 +23,7 @@ function processResults(allResults){
     return {
         'minTemp'   : kelvinToCelcius(allResults.main.temp_min),    // Celsius
         'maxTemp'   : kelvinToCelcius(allResults.main.temp_max),    // Celsius
-        'chanceRain': 0.83,                                         // 0 - 1 //TODO find new api
+        'chanceRain': 0.84,                                         // 0 - 1 //TODO find new api
         'rainFall'  : getRainFall(allResults.rain),                 // mm
         'cloudCover': allResults.clouds.all                         // percentage
     }
