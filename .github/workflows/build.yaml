@@ -30,9 +30,8 @@ jobs:
 
     - name: Copy bundle to assets and commit
       run: |
-        cp dist/* assets/
         git config user.name github-actions
         git config user.email github-actions@github.com
-        git add .
+        git add assets
         git commit -m "Updating assets"
      #   git push
