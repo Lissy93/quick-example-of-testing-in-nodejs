@@ -1,0 +1,13 @@
+name: PR Validator
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'assets/*'
+
+jobs:
+  build:
+    steps:
+      run: echo 'No unit test check needed'
+

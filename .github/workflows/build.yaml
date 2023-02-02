@@ -3,12 +3,12 @@ name: PR Validator
 on:
   pull_request:
     types: [opened, reopened, synchronize]
+    paths-ignore:
+      - 'assets/*'
 
 jobs:
   build:
-    if: github.actor == 'VilakshanDadwal'
     runs-on: ubuntu-latest
-
     steps:
 
     - uses: actions/checkout@v3
