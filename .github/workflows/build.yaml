@@ -1,24 +1,15 @@
 name: PR Validator
 
 on:
-  #pull_request:
-  #  types: [opened, reopened, synchronize]
-  push:
-    branches-ignore:
-      - master
-    paths-ignore:
-      - 'assets/*'
+  pull_request:
+    types: [opened, reopened, synchronize]
+
 jobs:
   build:
     if: github.actor == 'VilakshanDadwal'
     runs-on: ubuntu-latest
 
     steps:
-
-    - name: Dump GitHub context
-      env:
-        GITHUB_CONTEXT: ${{ toJson(github) }}
-      run: echo "$GITHUB_CONTEXT"
 
     - uses: actions/checkout@v3
       with:
