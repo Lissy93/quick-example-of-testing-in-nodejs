@@ -9,5 +9,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      run: echo "No unit test check needed"
+
+      - run: echo "No unit test check needed"
 
