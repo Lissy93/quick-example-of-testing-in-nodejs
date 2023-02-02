@@ -30,7 +30,7 @@ jobs:
 
     - name: Copy bundle to assets and commit
       run: |
-        cp dist/*.js assets/
+        cp dist/* assets/
         git config user.name github-actions
         git config user.email github-actions@github.com
         git add .
