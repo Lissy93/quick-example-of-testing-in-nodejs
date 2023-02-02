@@ -1,9 +1,9 @@
 name: PR Validator
 
 on:
-  pull_request:
+  push:
     paths-ignore:
-      - 'assets/*'
+      - 'assets/**'
 
 jobs:
   build:
