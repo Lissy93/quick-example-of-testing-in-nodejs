@@ -31,6 +31,6 @@ jobs:
         git push origin Bundle_PR
 
     - name: Create Pull Request for bundle
-      run: gh pr create -f --base main
+      run: gh pr create --base main --head Bundle_PR --fill
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
