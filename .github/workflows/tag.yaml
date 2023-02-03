@@ -1,0 +1,27 @@
+name: Bundle and Release
+
+on:
+  push:
+    branches:
+    - master
+    paths:
+    - 'assets/**'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Find package version
+      id: packageVersion
+      run: echo "package_json=$(cat package.json | tr -d "\n")" >> $GITHUB_OUTPUT
+
+    - name: Print version
+      run: echo "Package Json is ${{steps.packageVersion.outputs.package_json}}"
+
+    - name: Tag main branch
+      run: |
+        git tag "v${{ fromJson(steps.packageVersion.outputs.package_json).version }}"
+        git push origin "v${{ fromJson(steps.packageVersion.outputs.package_json).version }}"
