@@ -29,4 +29,8 @@ jobs:
         git add assets
         git commit -m "Updating assets"
         git push origin Bundle_PR
-        gh pr create -f --base main
+
+    - name: Create Pull Request for bundle
+      run: gh pr create -f --base main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
