@@ -1,0 +1,30 @@
+name: Bundle and Release
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with: Bundle_PR
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '14'
+    - run: npm install
+
+    - name: Create bundle
+      run: npm run build
+
+    - name: Copy bundle to assets and commit
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git add assets
+        git commit -m "Updating assets"
+        git push origin Bundle_PR
+
