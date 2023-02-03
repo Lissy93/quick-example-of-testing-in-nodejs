@@ -33,4 +33,4 @@ jobs:
     - name: Create Pull Request for bundle
       run: gh pr create --base master --title "Updated bundle PR" --body "Created bundle"
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.PAT }}
