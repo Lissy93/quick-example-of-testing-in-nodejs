@@ -1,11 +1,11 @@
-name: Bundle and Release
+name: Tag the main branch
 
 on:
   push:
     branches:
-    - master
+      - master
     paths:
-    - 'assets/**'
+      - 'assets/**'
 
 jobs:
   release:
