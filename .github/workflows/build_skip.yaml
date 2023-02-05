@@ -9,6 +9,5 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-
-      - run: echo "No unit test check needed for uploading assets"
+      - run: echo "Unit test status check not needed for uploading assets"
 
