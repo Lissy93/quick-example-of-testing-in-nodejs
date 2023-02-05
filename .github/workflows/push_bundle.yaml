@@ -31,7 +31,7 @@ jobs:
         git diff --staged --quiet && (echo "bundled=false" >> $GITHUB_OUTPUT) || git commit -m "Updating assets" && git push origin Bundle_PR && (echo "bundled=true" >> $GITHUB_OUTPUT)
 
     - name: Create Pull Request for bundle
-      if: steps.bundle.outputs.bundle == 'true'
+      if: steps.bundle.outputs.bundled == 'true'
       run: gh pr create --base master --title "Updated bundle PR" --body "Created bundle"
       env:
         GITHUB_TOKEN: ${{ secrets.PAT }}
