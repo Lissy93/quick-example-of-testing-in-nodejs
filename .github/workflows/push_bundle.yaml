@@ -28,11 +28,7 @@ jobs:
         git config user.name github-actions
         git config user.email github-actions@github.com
         git add assets
-        git diff --staged --quiet && (echo "bundled=false" >> $GITHUB_OUTPUT)
-        ||
-        git commit -m "Updating assets" && git push origin Bundle_PR
-        && (echo "bundled=true" >> $GITHUB_OUTPUT)
-
+        git diff --staged --quiet && (echo "bundled=false" >> $GITHUB_OUTPUT) || git commit -m "Updating assets" && git push origin Bundle_PR && (echo "bundled=true" >> $GITHUB_OUTPUT)
 
     - name: Create Pull Request for bundle
       if: steps.bundle.outputs.bundle == 'true'
