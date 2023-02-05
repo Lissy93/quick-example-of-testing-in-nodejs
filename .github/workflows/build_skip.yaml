@@ -1,9 +1,7 @@
-name: Asset Updated
+name: Asset
 
 on:
   push:
-    branches-ignore:
-      - master
     paths:
       - 'assets/**'
 
