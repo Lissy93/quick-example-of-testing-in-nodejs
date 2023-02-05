@@ -2,6 +2,8 @@ name: PR Validator
 
 on:
   push:
+    branches-ignore:
+      - master
     paths-ignore:
       - 'assets/**'
 
