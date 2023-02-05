@@ -23,5 +23,6 @@ jobs:
 
     - name: Tag main branch
       run: |
-        git tag "v${{ fromJson(steps.packageVersion.outputs.package_json).version }}"
-        git push origin "v${{ fromJson(steps.packageVersion.outputs.package_json).version }}"
+        package_version=${{ fromJson(steps.packageVersion.outputs.package_json).version }}
+        git tag "v${package_version}"
+        git push origin "v${package_version}"
