@@ -2,8 +2,8 @@ name: PR Validator
 
 on:
   pull_request:
-    branches-ignore:
-      - master
+    paths-ignore:
+      - 'assets/**'
 
 jobs:
   build:
