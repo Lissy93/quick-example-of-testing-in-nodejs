@@ -1,4 +1,4 @@
-name: Bundle
+name: Bundle asset
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  build:
+  asset:
     runs-on: ubuntu-latest
     steps:
     - name: Dump GitHub context
