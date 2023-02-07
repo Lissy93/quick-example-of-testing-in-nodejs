@@ -1,9 +1,7 @@
 name: PR Validator
 
 on:
-  push:
-    branches-ignore:
-      - master
+  pull_request:
 
 jobs:
   build:
