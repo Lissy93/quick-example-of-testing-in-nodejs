@@ -1,0 +1,34 @@
+name: PR Validator
+
+on:
+  pull_request:
+    paths-ignore:
+      - 'assets/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo "$GITHUB_CONTEXT"
+    - uses: actions/checkout@v3
+      with:
+        ref: ${{github.head_ref}}
+        token: ${{ secrets.PAT }}
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '14'
+    - run: npm install
+    - run: npm test
+
+
+    - name: Commit bundled assets
+      run: |
+        npm run build
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git status
+        git add assets
+        git diff --staged --quiet || (git commit -m "Updating assets" && git push)
