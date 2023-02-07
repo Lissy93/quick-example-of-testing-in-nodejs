@@ -1,10 +1,12 @@
-name: PR Validator
+name: Bundle asset
 
 on:
-  pull_request:
+  push:
+    branches-ignore:
+      - master
 
 jobs:
-  build:
+  asset:
     runs-on: ubuntu-latest
     steps:
     - name: Dump GitHub context
@@ -26,5 +28,3 @@ jobs:
         git config user.email github-actions@github.com
         git add assets
         git diff --staged --quiet || (git commit -m "Updating assets" && git push)
-
-    - run: npm test
