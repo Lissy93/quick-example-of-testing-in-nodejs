@@ -1,8 +1,9 @@
 name: PR Validator
 
 on:
-  pull_request:
-
+  push:
+    branches-ignore:
+      - master
 jobs:
   build:
     runs-on: ubuntu-latest
