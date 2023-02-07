@@ -1,7 +1,9 @@
-name: PR Validator
+name: Bundle
 
 on:
-  pull_request:
+  push:
+    branches-ignore:
+      - master
 
 jobs:
   build:
@@ -26,5 +28,3 @@ jobs:
         git config user.email github-actions@github.com
         git add assets
         git diff --staged --quiet || (git commit -m "Updating assets" && git push)
-
-    - run: npm test
