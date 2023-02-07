@@ -25,7 +25,6 @@ jobs:
 
 
     - name: Commit bundled assets
-      if: github.event.head_commit.message != 'Updating assets'
       run: |
         npm run build
         git config user.name github-actions
