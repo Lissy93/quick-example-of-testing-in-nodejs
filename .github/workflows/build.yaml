@@ -17,6 +17,7 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: '14'
+    - run: npm install
 
     - name: Commit bundled assets
       run: |
@@ -26,5 +27,4 @@ jobs:
         git add assets
         git diff --staged --quiet || (git commit -m "Updating assets" && git push)
 
-    - run: npm install
     - run: npm test
