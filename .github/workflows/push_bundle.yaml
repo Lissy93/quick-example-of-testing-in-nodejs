@@ -10,6 +10,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
+    - uses: tibdex/github-app-token@v1
+      id: get_installation_token
+      with:
+        app_id: 290779
+        # installation_id not needed IF the app is installed on this current repo
+        installation_id: 33956410
+        private_key: ${{ secrets.PRIVATE_KEY }}
+
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
