@@ -1,9 +1,6 @@
 name: Tag the main branch
 
-on:
-  push:
-    branches:
-      - master
+on: [workflow_dispatch]
 
 jobs:
   tag:
