@@ -26,13 +26,12 @@ jobs:
       run: |
         echo "mainPackageJson=$(cat package.json | tr -d "\n")" >> $GITHUB_OUTPUT
 
-    - name: Compare versions
+    - name: Find versions
+      id: versions
       run: |
-       branchPackgeVersion=${{ fromJson(steps.mainPackageJson.outputs.mainPackageJson).version }}
-       mainPackageVersion=${{ fromJson(steps.branchPackageJson.outputs.branchPackageJson).version }}
-       if [ $branchPackgeVersion -eq $mainPackageVersion ]
-        then
-         exit 1
-        else
-         exit 0
-       fi
+       echo "branchPackgeVersion=${{ fromJson(steps.mainPackageJson.outputs.mainPackageJson).version }}" >> $GITHUB_OUTPUT
+       echo "mainPackageVersion=${{ fromJson(steps.branchPackageJson.outputs.branchPackageJson).version }}" >> $GITHUB_OUTPUT
+
+    - name: Compare versions
+      if: ${{ steps.version.outputs.ranchPackgeVersion == steps.version.outputs.mainPackageVersion}}
+      run: exit 1
