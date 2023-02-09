@@ -37,4 +37,5 @@ jobs:
       run: exit 0
 
     - name: Version needs to be updated
+      if: ${{ steps.versions.outputs.branchPackgeVersion == steps.versions.outputs.mainPackageVersion}}
       run: exit 1
