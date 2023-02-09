@@ -1,4 +1,4 @@
-name: Tag and Bundle
+name: Create Bundle
 
 on:
   push:
@@ -41,6 +41,8 @@ jobs:
 
     - name: Create Pull Request for bundle
       if: steps.bundle.outputs.bundled == 'true'
-      run: gh pr create --base master --title "Updated bundle PR" --body "Created bundle"
+      run: |
+        gh pr create --base master --title "Updated bundle PR" --body "Created bundle"
+        gh pr merge
       env:
         GITHUB_TOKEN: ${{ steps.get_installation_token.outputs.token }}
