@@ -1,0 +1,40 @@
+name: Package Version Check
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  packageVersionCheck:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Get package json of current branch
+      id: branchPackageJson
+      run: |
+        echo "branchPackageJson=$(cat package.json | tr -d "\n")" >> $GITHUB_OUTPUT
+
+    - uses: actions/checkout@v3
+      with:
+        ref: master
+
+    - name: Get package json of main
+      id: mainPackageJson
+      run: |
+        echo "mainPackageJson=$(cat package.json | tr -d "\n")" >> $GITHUB_OUTPUT
+
+    - name: Find versions
+      id: versions
+      run: |
+       echo "branchPackgeVersion=${{ fromJson(steps.mainPackageJson.outputs.mainPackageJson).version }}" >> $GITHUB_OUTPUT
+       echo "mainPackageVersion=${{ fromJson(steps.branchPackageJson.outputs.branchPackageJson).version }}" >> $GITHUB_OUTPUT
+
+    - name: Version needs to be updated
+      if: ${{ steps.versions.outputs.branchPackgeVersion == steps.versions.outputs.mainPackageVersion}}
+      run: exit 1
+
+    - name: Version is Updated
+      run: echo "All Good"
