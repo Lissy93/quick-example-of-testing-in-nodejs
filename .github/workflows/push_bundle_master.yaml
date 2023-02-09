@@ -1,4 +1,4 @@
-name: Create Bundle
+name: Push Bundle master
 
 on:
   push:
@@ -39,6 +39,8 @@ jobs:
     - name: Push to master
       if: steps.bundle.outputs.bundled == 'true'
       run: |
+        git config user.name vil-github-app
+        git config user.email dummy@github.com
         git commit -m "Updating assets"
         git push origin
       env:
