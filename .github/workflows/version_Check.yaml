@@ -33,5 +33,5 @@ jobs:
        echo "mainPackageVersion=${{ fromJson(steps.branchPackageJson.outputs.branchPackageJson).version }}" >> $GITHUB_OUTPUT
 
     - name: Compare versions
-      if: ${{ steps.version.outputs.ranchPackgeVersion == steps.version.outputs.mainPackageVersion}}
+      if: ${{ steps.version.outputs.branchPackgeVersion == steps.version.outputs.mainPackageVersion}}
       run: exit 1
