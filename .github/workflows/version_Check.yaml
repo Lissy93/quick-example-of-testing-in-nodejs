@@ -16,7 +16,7 @@ jobs:
       id: branchVersion
       run: |
         packageJson=$(cat package.json | tr -d "\n")
-        echo "Branch Version is ${{ fromJson($packageJson).version }}"
+        echo "Branch Version is ${{ fromJson(packageJson).version }}"
 
     - uses: actions/checkout@v3
       with:
@@ -25,5 +25,5 @@ jobs:
       id: mainVersion
       run: |
         packageJson=$(cat package.json | tr -d "\n")
-        echo "Branch Version is ${{ fromJson($packageJson).version }}"
+        echo "Branch Version is ${{ fromJson(packageJson).version }}"
 
