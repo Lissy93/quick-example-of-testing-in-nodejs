@@ -47,7 +47,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name:
-      if:
+      if: steps.bundle.outputs.bundled == 'true'
       run: |
         gh pr review --approve
         gh pr merge --auto
