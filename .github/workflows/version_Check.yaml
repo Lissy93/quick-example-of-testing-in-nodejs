@@ -1,0 +1,25 @@
+name: Package Version Check
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Find package version of current branch
+      id: branchVersion
+      run: echo ${{ fromJson(cat package.json | tr -d "\n").version }}
+
+    - uses: actions/checkout@v3
+      with:
+        ref: main
+    - name: Find package version of main
+      id: mainVersion
+      run: echo ${{ fromJson(cat package.json | tr -d "\n").version }}
+
