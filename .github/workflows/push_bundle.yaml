@@ -44,13 +44,13 @@ jobs:
       run: |
         gh pr create --base master --title "Updated bundle PR" --body "Created bundle"
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ steps.get_installation_token.outputs.token }}
 
     - name:
       if: steps.bundle.outputs.bundled == 'true'
       run: |
         gh pr review --approve
-        gh pr merge --auto
+        gh pr merge --auto --merge -d
       env:
-        GITHUB_TOKEN: ${{ steps.get_installation_token.outputs.token }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
