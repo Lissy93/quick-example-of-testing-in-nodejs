@@ -15,7 +15,7 @@ jobs:
     - name: Get package json of current branch
       id: branchPackageJson
       run: |
-        echo "branchPackageJson=$(cat package.json | tr -d "\n") >> $GITHUB_OUTPUT
+        echo "branchPackageJson=$(cat package.json | tr -d "\n")" >> $GITHUB_OUTPUT
 
     - uses: actions/checkout@v3
       with:
@@ -24,7 +24,7 @@ jobs:
     - name: Get package json of main
       id: mainPackageJson
       run: |
-        echo "mainPackageJson=$(cat package.json | tr -d "\n") >> $GITHUB_OUTPUT
+        echo "mainPackageJson=$(cat package.json | tr -d "\n")" >> $GITHUB_OUTPUT
 
     - name: Compare versions
       if: ${{ fromJson(steps.mainPackageJson.outputs.branchPackageJson).version }} == ${{ fromJson(steps.branchPackageJson.outputs.mainPackageJson).version }}
