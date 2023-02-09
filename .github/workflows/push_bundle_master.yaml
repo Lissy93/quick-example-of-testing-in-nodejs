@@ -1,0 +1,47 @@
+name: Create Bundle
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - 'assets/**'
+jobs:
+
+  bundle:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - uses: tibdex/github-app-token@v1
+      id: get_installation_token
+      with:
+        app_id: 290779
+        # installation_id not needed IF the app is installed on this current repo
+        installation_id: 33956410
+        private_key: ${{ secrets.PRIVATE_KEY }}
+
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '14'
+    - run: npm install
+
+    - name: Create bundle
+      run: npm run build
+
+    - name: Copy bundle to assets and commit
+      id: bundle
+      run: |
+        git add assets
+        git diff --staged --quiet && (echo "bundled=false" >> $GITHUB_OUTPUT) || (echo "bundled=true" >> $GITHUB_OUTPUT)
+
+    - name: Push to master
+      if: steps.bundle.outputs.bundled == 'true'
+      run: |
+        git commit -m "Updating assets"
+        git push origin
+      env:
+        GITHUB_TOKEN: ${{ steps.get_installation_token.outputs.token }}
+
+
