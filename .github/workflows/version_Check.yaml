@@ -15,8 +15,8 @@ jobs:
     - name: Find package version of current branch
       id: branchVersion
       run: |
-        packageVersion=$(cat package.json | tr -d "\n")
-        echo "Branch Version is ${{ fromJson(packageVersion).version }}"
+        packageJson=$(cat package.json | tr -d "\n")
+        echo "Branch Version is ${{ fromJson(${packageJson}).version }}"
 
     - uses: actions/checkout@v3
       with:
@@ -24,6 +24,6 @@ jobs:
     - name: Find package version of main
       id: mainVersion
       run: |
-        packageVersion=$(cat package.json | tr -d "\n")
-        echo "Branch Version is ${{ fromJson(packageVersion).version }}"
+        packageJson=$(cat package.json | tr -d "\n")
+        echo "Branch Version is ${{ fromJson(${packageJson}).version }}"
 
