@@ -32,10 +32,9 @@ jobs:
        echo "branchPackgeVersion=${{ fromJson(steps.mainPackageJson.outputs.mainPackageJson).version }}" >> $GITHUB_OUTPUT
        echo "mainPackageVersion=${{ fromJson(steps.branchPackageJson.outputs.branchPackageJson).version }}" >> $GITHUB_OUTPUT
 
-    - name: Version upgraded
+    - name: Version need to be updated
       if: ${{ steps.versions.outputs.branchPackgeVersion != steps.versions.outputs.mainPackageVersion}}
-      run: exit 0
-
-    - name: Version needs to be updated
-      if: ${{ steps.versions.outputs.branchPackgeVersion == steps.versions.outputs.mainPackageVersion}}
       run: exit 1
+
+    - name: Version Updated
+      run: exit 0
