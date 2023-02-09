@@ -38,5 +38,5 @@ jobs:
 
     - name: Version needs to be updated
       run: |
-      echo "Please update version"
-      exit 1
+        echo "Please update version"
+        exit 1
