@@ -46,6 +46,7 @@ jobs:
         git commit -m "Updating assets"
         git push
       env:
-        GITHUB_TOKEN: ${{ steps.get_installation_token.outputs.token }}
+        GITHUB_TOKEN: ${{ secrets.PAT }}
+        #GITHUB_TOKEN: ${{ steps.get_installation_token.outputs.token }}
 
 
