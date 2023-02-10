@@ -22,6 +22,8 @@ jobs:
         private_key: ${{ secrets.PRIVATE_KEY }}
 
     - uses: actions/checkout@v3
+      with:
+        ref: master
     - uses: actions/setup-node@v3
       with:
         node-version: '14'
@@ -42,7 +44,7 @@ jobs:
         git config user.name vil-github-app
         git config user.email dummy@github.com
         git commit -m "Updating assets"
-        git push origin
+        git push
       env:
         GITHUB_TOKEN: ${{ steps.get_installation_token.outputs.token }}
 
