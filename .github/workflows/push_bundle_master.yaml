@@ -44,7 +44,7 @@ jobs:
         git config user.name vil-github-app
         git config user.email dummy@github.com
         git commit -m "Updating assets"
-        git push
+        git push -f origin master
       env:
         GITHUB_TOKEN: ${{ secrets.PAT }}
         #GITHUB_TOKEN: ${{ steps.get_installation_token.outputs.token }}
