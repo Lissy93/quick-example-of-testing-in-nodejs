@@ -24,6 +24,8 @@ jobs:
     - uses: actions/checkout@v3
       with:
         ref: master
+        token : ${{ secrets.PAT }}
+
     - uses: actions/setup-node@v3
       with:
         node-version: '14'
@@ -44,9 +46,9 @@ jobs:
         git config user.name vil-github-app
         git config user.email dummy@github.com
         git commit -m "Updating assets"
-        git push origin master -f --no-verify
-      env:
+        git push
+      #env:
         #GITHUB_TOKEN: ${{ secrets.PAT }}
-        GITHUB_TOKEN: ${{ steps.get_installation_token.outputs.token }}
+        #GITHUB_TOKEN: ${{ steps.get_installation_token.outputs.token }}
 
 
