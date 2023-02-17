@@ -28,11 +28,15 @@ jobs:
     - run: npm install
 
     - name: Create bundle
-      run: npm run build
+      run: |
+        npm run build
+        cd backup
 
     - name: Copy bundle to assets and commit
       id: bundle
       run: |
+        mkdir -p assets
+        cp backup/build/* assets/
         git checkout -b Asset_PR
         git config user.name github-actions
         git config user.email github-actions@github.com
