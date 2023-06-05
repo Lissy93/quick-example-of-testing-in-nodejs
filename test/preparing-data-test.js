@@ -13,7 +13,7 @@ var fetchWeather = require('../fetch-weather');
 /* Include sample data */
 var rawWeatherData = require('../test-data/sample-weather-raw.json');
 
-describe('Test that the data fetched from OpenWeatherMap is processed correctly', function(){
+describe('Testing that the data fetched from OpenWeatherMap is processed correctly', function(){
 
     it('Should check fetched data is processed correctly', function(){
         var callback = sinon.stub();
