@@ -7,4 +7,4 @@ jobs:
     steps:
     - name: check build status
       run: |
-        curl -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/${{ github.repository.owner }}/${{ github.repository }}/commits/$GITHUB_REF_NAME
+        curl -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/${{ github.repository.owner }}/${{ github.repository }}/commits/${{ github.ref.name }}
