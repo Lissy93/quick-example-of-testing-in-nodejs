@@ -22,7 +22,7 @@ describe('Test the weather kit module\'s basic functionality', function(){
     /* Example of Chai expect*/
     it('should return true for umbrella test if it is raining',function(){
         expect(helloWeather.doINeed.umbrella(monday)).to.be.a('boolean');
-        expect(helloWeather.doINeed.umbrella(tuesday)).equal(false);
+        expect(helloWeather.doINeed.umbrella(tuesday)).equal(true);
         expect(helloWeather.doINeed.umbrella(wednesday)).equal(false);
         expect(helloWeather.doINeed.umbrella(friday)).equal(true);
     });
