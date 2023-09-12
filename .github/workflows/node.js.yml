@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: yarn set version 3.4.1
+      - run: yarn set version $(cat package.json | grep yarn@ | cut -d@ -f2 | cut -d "\"" -f 1)
       - run: yarn
       - run: yarn test
       - run: echo "my test step"
