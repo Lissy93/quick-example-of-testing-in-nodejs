@@ -27,14 +27,14 @@ jobs:
       - run: yarn
       - run: yarn test
       - run: echo "my test step"
-      - run: printenv
+      - run: pwd
       - name: 'Automated Version Bump'
         uses: 'phips28/gh-action-bump-version@v10.0.1'
         with:
           tag-prefix: 'v'
-      - name: Changelog
-        uses: scottbrenner/generate-changelog-action@master
-        id: Changelog
-        with:
-          from-tag: v1.0
-          to-tag: HEAD
+#      - name: Changelog
+#        uses: scottbrenner/generate-changelog-action@master
+#        id: Changelog
+#        with:
+#          from-tag: v1.0
+#          to-tag: HEAD
