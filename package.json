@@ -1,6 +1,6 @@
 {
   "name": "quick-test-example",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -26,5 +26,6 @@
   "volta": {
     "node": "18.16.1",
     "yarn": "3.4.1"
-  }
+  },
+  "packageManager": "yarn@3.4.1"
 }
