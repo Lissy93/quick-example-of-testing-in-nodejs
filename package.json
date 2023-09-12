@@ -22,5 +22,9 @@
     "colors": "^1.1.2",
     "command-line-args": "^4.0.7",
     "request": "^2.83.0"
+  },
+  "volta": {
+    "node": "18.16.1",
+    "yarn": "3.4.1"
   }
 }
