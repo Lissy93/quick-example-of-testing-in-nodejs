@@ -31,3 +31,5 @@ jobs:
       - run: yarn test
       - name: 'Automated Version Bump'
         uses: 'phips28/gh-action-bump-version@master'
+        with:
+          tag-prefix: 'v'
