@@ -11,14 +11,11 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [ 18.x ]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
@@ -29,22 +26,8 @@ jobs:
       - run: yarn set version 3.4.1
       - run: yarn
       - run: yarn test
+      - run: echo "my test step"
       - name: 'Automated Version Bump'
         uses: 'phips28/gh-action-bump-version@master'
         with:
           tag-prefix: 'v'
-  pre-release:
-    name: "Pre Release"
-    runs-on: "ubuntu-latest"
-
-    steps:
-      # ...
-      - name: "Build & test"
-        run: |
-          echo "done!"
-
-      - uses: "diillson/auto-release@latest"
-        with:
-          automatic_release_tag: "latest"
-          prerelease: true
-          title: "Development Build"
