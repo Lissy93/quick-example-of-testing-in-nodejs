@@ -29,4 +29,4 @@ jobs:
       - run: yarn set version 3.4.1
       - run: yarn
 #      - run: npm run build --if-present
-#      - run: npm test
+      - run: npm test
