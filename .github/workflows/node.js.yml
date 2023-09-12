@@ -29,6 +29,5 @@ jobs:
       - run: yarn set version 3.4.1
       - run: yarn
       - run: yarn test
-      - run: yarn cover
       - name: 'Automated Version Bump'
         uses: 'phips28/gh-action-bump-version@master'
