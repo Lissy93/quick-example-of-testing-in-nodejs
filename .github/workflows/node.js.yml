@@ -29,6 +29,6 @@ jobs:
       - run: echo "my test step"
       - run: printenv
       - name: 'Automated Version Bump'
-        uses: 'phips28/gh-action-bump-version@master'
+        uses: 'phips28/gh-action-bump-version@v10.0.1'
         with:
           tag-prefix: 'v'
