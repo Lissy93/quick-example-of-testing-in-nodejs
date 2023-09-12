@@ -32,8 +32,5 @@ jobs:
         uses: 'phips28/gh-action-bump-version@v10.0.1'
         with:
           tag-prefix: 'v'
-      - name: Changelog
-        uses: scottbrenner/generate-changelog-action@master
-        id: Changelog
-        with:
-          package-dir: pwd
+      - name: "✏️ Generate release changelog"
+        uses: heinrichreimer/github-changelog-generator-action@v2.3
