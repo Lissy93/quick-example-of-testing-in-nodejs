@@ -27,6 +27,7 @@ jobs:
       - run: yarn
       - run: yarn test
       - run: echo "my test step"
+      - run: printenv
       - name: 'Automated Version Bump'
         uses: 'phips28/gh-action-bump-version@master'
         with:
