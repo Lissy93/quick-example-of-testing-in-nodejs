@@ -35,10 +35,3 @@ jobs:
         uses: 'phips28/gh-action-bump-version@v10.0.1'
         with:
           tag-prefix: 'v'
-      - name: "✏️ Generate release changelog"
-        uses: dittrichlucas/changelog-generator@main
-        with:
-          token: ${{ github.token }}
-          repo: ${{ github.repository }}
-      - name: Check changelog file
-        run: cat CHANGELOG.md
