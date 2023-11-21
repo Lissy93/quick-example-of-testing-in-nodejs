@@ -36,4 +36,5 @@ jobs:
         with:
           tag-prefix: 'v'
           target-branch: 'master'
+          commit-message: 'CI: bumps version to ${{version}} [skip ci]'
 
