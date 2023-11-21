@@ -36,5 +36,6 @@ jobs:
         with:
           tag-prefix: 'v'
           target-branch: 'master'
-          commit-message: '${GITHUB_BASE_REF} : bumps version to [skip ci]'
-
+          commit-message: '${{branch_name}} : bumps version to [skip ci]'
+        env:
+          branch_name: ${{GITHUB_BASE_REF}}
