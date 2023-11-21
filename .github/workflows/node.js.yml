@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: yarn set version 3.4.1
+      - run: yarn set version 1.22.19
       - name: Get artifacts
         run: yarn
       - run: yarn test
