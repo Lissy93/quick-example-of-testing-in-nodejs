@@ -35,4 +35,4 @@ jobs:
         with:
           tag-prefix: 'v'
           target-branch: ${{github.ref_name}}
-          commit-message: 'bump application version in a: ${{github.ref_name}} branch'
+          commit-message: '${{github.ref_name}} => version bumped'
