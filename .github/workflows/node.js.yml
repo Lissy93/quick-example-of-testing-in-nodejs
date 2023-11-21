@@ -36,13 +36,7 @@ jobs:
         with:
           tag-prefix: 'v'
       - name: "✏️ Generate release changelog"
-        uses: danpetitt/changelog-file-generator@v2.2.1
+        uses: bala-raj/pull-request-changelog@master
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          release_version: 'v2.2.1'
-          exclude: 'perf,other,breaking'
-          file: './CHANGELOG.md'
-          files_to_commit: 'CHANGELOG.md','*.svg'
-          branch: main
-          user: 'user@user.com'
-          userName: 'A User'
+          branch: ${{ github.event.pull_request.base.ref }}
