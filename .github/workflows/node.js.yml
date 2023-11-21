@@ -15,7 +15,6 @@ jobs:
     strategy:
       matrix:
         node-version: [ 14, 16, 18 ]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
@@ -29,6 +28,14 @@ jobs:
       - run: yarn test
       - run: echo "my test step"
       - run: pwd
+  bump:
+    runs-on: ubuntu-latest
+    needs: [build]
+    strategy:
+      matrix:
+        node-version: [ 14, 16, 18 ]
+    steps:
+      - uses: actions/checkout@v3
       - name: 'Automated Version Bump'
         uses: 'phips28/gh-action-bump-version@v10.0.1'
         with:
