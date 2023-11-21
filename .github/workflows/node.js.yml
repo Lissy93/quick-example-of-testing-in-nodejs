@@ -38,11 +38,11 @@ jobs:
       - name: "✏️ Generate release changelog"
         uses: danpetitt/changelog-file-generator@v2.2.1
         with:
-          token: ${{ secrets.TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           release_version: 'v2.2.1'
           exclude: 'perf,other,breaking'
           file: './CHANGELOG.md'
           files_to_commit: 'CHANGELOG.md','*.svg'
-          branch: master
+          branch: main
           user: 'user@user.com'
           userName: 'A User'
