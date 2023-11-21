@@ -36,9 +36,13 @@ jobs:
         with:
           tag-prefix: 'v'
       - name: "✏️ Generate release changelog"
-        uses: srepollock/changelog-generator-action@master
+        uses: danpetitt/changelog-file-generator@v2.2.1
         with:
-          REPO_NAME: ${{ github.event.repository.name }}
-          ACCESS_TOKEN: ${{secrets.TOKEN}}
-          PATH: '/CHANGELOG.md'
-          COMMIT_MESSAGE: 'docs(CHANGELOG): update release notes'
+          token: ${{ secrets.TOKEN }}
+          release_version: 'v2.2.1'
+          exclude: 'perf,other,breaking'
+          file: './CHANGELOG.md'
+          files_to_commit: 'CHANGELOG.md','*.svg'
+          branch: master
+          user: 'user@user.com'
+          userName: 'A User'
