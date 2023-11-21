@@ -4,7 +4,7 @@
 name: Node.js Gamedev
 on:
   push:
-    branches: [ if: ${{ github.ref_name == 'master' }} ]
+    branches: [ master ]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -30,6 +30,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: 'Automated Version Bump'
+        if: ${{ github.ref_name == 'master' }}
         uses: 'phips28/gh-action-bump-version@v10.1.1'
         with:
           tag-prefix: 'v'
