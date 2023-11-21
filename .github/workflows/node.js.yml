@@ -35,3 +35,5 @@ jobs:
         uses: 'phips28/gh-action-bump-version@v10.0.1'
         with:
           tag-prefix: 'v'
+          target-branch: 'v1'
+
