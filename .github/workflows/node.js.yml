@@ -29,6 +29,8 @@ jobs:
   bump:
     runs-on: ubuntu-latest
     needs: [build]
+    env:
+      JOBENV: Available for this specific job only
     steps:
       - uses: actions/checkout@v3
       - name: 'Automated Version Bump'
@@ -36,7 +38,5 @@ jobs:
         with:
           tag-prefix: 'v'
           target-branch: 'master'
-          commit-message: '${{branch_name}} : bumps version to [skip ci]'
-        env:
-          branch_name: ${{GITHUB_BASE_REF}}
-          commit: name
+          commit-message: '${{JOBENV}}: bumps version'
+
