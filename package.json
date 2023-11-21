@@ -1,6 +1,6 @@
 {
   "name": "quick-test-example",
-  "version": "1.0.39",
+  "version": "1.0.40",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
