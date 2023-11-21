@@ -24,7 +24,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - run: yarn set version 3.4.1
-      - run: yarn
+      - name: Get artifacts
+        run: yarn
       - run: yarn test
       - run: echo "my test step"
       - run: pwd
