@@ -4,7 +4,7 @@
 name: Node.js Gamedev
 
 env:
-  DAY_OF_WEEK: ${{github.head_ref}}
+  DAY_OF_WEEK: ${{github.ref_name}}
 on:
   push:
     branches: [ "master" ]
@@ -38,5 +38,5 @@ jobs:
         with:
           tag-prefix: 'v'
           target-branch: 'master'
-          commit-message: '${{github.head_ref}} bumps version'
+          commit-message: '${{github.ref_name}} bumps version'
 
