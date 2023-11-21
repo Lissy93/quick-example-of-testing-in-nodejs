@@ -36,6 +36,6 @@ jobs:
         if: ${{ github.ref_name == 'master' }}
         uses: 'phips28/gh-action-bump-version@v10.1.1'
         with:
-          tag-prefix: 'rc/'
+          tag-prefix: 'rc/v'
           target-branch: ${{github.ref_name}}
           commit-message: '${{github.ref_name}} => version bumped'
