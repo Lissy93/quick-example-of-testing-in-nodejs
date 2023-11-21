@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: yarn set version 3.4.1
+      - run: yarn -v
       - run: yarn
       - run: yarn test
       - run: echo "my test step"
