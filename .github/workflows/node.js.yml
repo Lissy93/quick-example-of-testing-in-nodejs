@@ -38,5 +38,5 @@ jobs:
       - name: "✏️ Generate release changelog"
         uses: bala-raj/pull-request-changelog@master
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.TOKEN }}
           branch: ${{ github.event.pull_request.base.ref }}
