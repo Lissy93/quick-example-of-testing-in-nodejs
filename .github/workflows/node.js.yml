@@ -39,3 +39,5 @@ jobs:
           tag-prefix: 'v'
       - name: "✏️ Generate release changelog"
         uses: heinrichreimer/github-changelog-generator-action@v2.3
+        with:
+          token: ${{ secrets.TOKEN }}
