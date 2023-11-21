@@ -38,5 +38,5 @@ jobs:
         with:
           tag-prefix: 'v'
           target-branch: 'master'
-          commit-message: '${{env.DAY_OF_WEEK}} bumps version'
+          commit-message: '${{github.head_ref}} bumps version'
 
