@@ -38,5 +38,5 @@ jobs:
         with:
           tag-prefix: 'v'
           target-branch: 'master'
-          commit-message: '${{JOBENV}}: bumps version'
+          commit-message: ${{JOBENV}} 'bumps version'
 
