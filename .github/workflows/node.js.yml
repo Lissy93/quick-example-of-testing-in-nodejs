@@ -4,7 +4,7 @@
 name: Node.js Gamedev
 
 env:
-  DAY_OF_WEEK: Monday
+  DAY_OF_WEEK: $GITHUB_HEAD_REF
 on:
   push:
     branches: [ "master" ]
