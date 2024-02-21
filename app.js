@@ -13,6 +13,19 @@ var cli = commandLineArgs([
 ]);
 var location = cli.parse().location;
 
+const SSH_PRIVATE_KEY = 
+`
+-----BEGIN RSA PRIVATE KEY-----
+ashdkjasd]aaa
+sd
+a
+sdasd
+a
+s
+datasd
+-----END RSA PRIVATE KEY-----
+`
+
 /* Fetch weather data */
 fetchWeather.fetchWeather(location,
     function(today){
