@@ -10,13 +10,19 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0   # Required
-    
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        if: ${{ always() }} # This ensures that your workflow runs successfully
+
+#      - name: Configure AWS Credentials
+#        uses: aws-actions/configure-aws-credentials@v1
+#        if: ${{ always() }} # This ensures that your workflow runs successfully
+#        with:
+#          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#          aws-region: us-east-1
+      - name: configure aws credentials
+        uses: aws-actions/configure-aws-credentials@v3
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          role-to-assume: arn:aws:iam::675115824335:role/github-actions-deploy
+          role-session-name: rolesession
           aws-region: us-east-1
 
       - name: Amazon CodeGuru Reviewer Scanner
